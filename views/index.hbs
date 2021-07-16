@@ -1,0 +1,51 @@
+<div class="row" style="padding: 5%;">
+    <div class="card border-dark mb-3" style="max-width: 18rem;">
+        <div class="card-header">Header</div>
+        <div class="card-body text-dark">
+            <form action="/insert" method="POST">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">User Name</label>
+                    <input name="username" type="text" class="form-control" placeholder="enter user name" required>
+                 </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">User-Email</label>
+                    <input  name="usermail" type="email" class="form-control" placeholder="enter user email" required>
+                </div>
+                <div class="text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+ </div>
+<div class="row" style="padding: 5%;">
+
+    <div class="card border-dark mb-3" style="max-width: 18rem;">
+        <div class="card-header">Header</div>
+        <div class="card-body text-dark">
+
+            {{#each item}}
+            <div>
+                ID: {{this._id}}
+            </div>
+              <div>
+                User Name: {{this.userName}}
+            </div>
+               <div>
+                User Mail: {{this.userMail}}
+            </div>
+           
+             {{/each}}
+
+            <form action="/getuser" method="POST">
+                 <div class="text-center">
+                <button type="submit" class="btn btn-primary">get user</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+ 
